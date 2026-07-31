@@ -1,0 +1,218 @@
+:root {
+    --bg: #f5efe6;
+    --surface: #fffdfa;
+    --primary: #1f4d3d;
+    --accent: #d69b2b;
+    --text: #23312d;
+    --muted: #6f7a75;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f8efe8 0%, #ecf3ef 100%);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.hero {
+    background: linear-gradient(135deg, rgba(31, 77, 61, 0.92), rgba(16, 40, 31, 0.84)),
+                url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80') center/cover;
+    color: white;
+    text-align: center;
+    padding: 5rem 1.2rem;
+    margin-bottom: 2.5rem;
+}
+
+.hero-content {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.eyebrow {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.18);
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 0.8rem;
+}
+
+.hero p {
+    font-size: 1.05rem;
+    opacity: 0.95;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem 3rem;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--surface);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 1px solid rgba(31, 77, 61, 0.08);
+    cursor: pointer;
+}
+
+.card:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+}
+
+.card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+.card:hover img {
+    transform: scale(1.04);
+}
+
+.card-content {
+    padding: 1.3rem 1.25rem 1.5rem;
+}
+
+.card-content h2 {
+    font-size: 1.35rem;
+    color: var(--primary);
+    margin-bottom: 0.7rem;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    color: var(--muted);
+    text-align: justify;
+}
+
+.image-modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem;
+    background: rgba(6, 16, 12, 0.76);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+    z-index: 1000;
+}
+
+.image-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.16), transparent 70%);
+}
+
+.modal-frame {
+    position: relative;
+    width: min(92vw, 960px);
+    aspect-ratio: 16 / 10;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+    transform: scale(0.92);
+    transition: transform 0.35s ease;
+}
+
+.image-modal.active .modal-frame {
+    transform: scale(1);
+}
+
+.modal-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    animation: imageZoom 0.45s ease;
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.9);
+    color: #1f4d3d;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 2;
+}
+
+@keyframes imageZoom {
+    from {
+        transform: scale(1.06);
+        opacity: 0.75;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem 1rem 2rem;
+    background: var(--primary);
+    color: white;
+    margin-top: 1rem;
+}
+
+@media (max-width: 640px) {
+    .hero {
+        padding: 4rem 1rem;
+    }
+
+    .card-content {
+        padding: 1rem;
+    }
+
+    .modal-frame {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+    }
+}
