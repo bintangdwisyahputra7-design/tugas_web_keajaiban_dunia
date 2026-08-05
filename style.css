@@ -1,23 +1,28 @@
 :root {
-    --bg: #f5efe6;
-    --surface: #fffdfa;
-    --primary: #1f4d3d;
-    --accent: #d69b2b;
-    --text: #23312d;
-    --muted: #6f7a75;
+    --bg: #0c1218;
+    --surface: rgba(18, 30, 44, 0.95);
+    --surface-strong: rgba(14, 21, 34, 0.98);
+    --primary: #91d8ff;
+    --accent: #ff8c42;
+    --text: #e8eef8;
+    --muted: #9cb2cc;
+    --border: rgba(255, 255, 255, 0.08);
+    --shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background: linear-gradient(135deg, #f8efe8 0%, #ecf3ef 100%);
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #121c2f 0%, #090d14 45%, #05070c 100%);
     color: var(--text);
     line-height: 1.7;
+    overflow-x: hidden;
 }
 
 body.modal-open {
@@ -25,59 +30,77 @@ body.modal-open {
 }
 
 .hero {
-    background: linear-gradient(135deg, rgba(31, 77, 61, 0.92), rgba(16, 40, 31, 0.84)),
-                url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80') center/cover;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at top, rgba(34, 45, 66, 0.98), rgba(10, 14, 23, 1));
     color: white;
     text-align: center;
-    padding: 5rem 1.2rem;
-    margin-bottom: 2.5rem;
+    padding: 6rem 1.2rem 5rem;
+    margin-bottom: 3rem;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top center, rgba(255, 140, 66, 0.14), transparent 35%);
+    pointer-events: none;
 }
 
 .hero-content {
+    position: relative;
     max-width: 760px;
     margin: 0 auto;
+    z-index: 1;
 }
 
 .eyebrow {
-    display: inline-block;
-    padding: 0.4rem 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1rem;
     border-radius: 999px;
-    background: rgba(255,255,255,0.18);
-    font-size: 0.9rem;
-    letter-spacing: 0.08em;
+    background: rgba(255,255,255,0.08);
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid rgba(255,255,255,0.12);
 }
 
 .hero h1 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    margin-bottom: 0.8rem;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1rem;
+    letter-spacing: -0.03em;
 }
 
 .hero p {
-    font-size: 1.05rem;
-    opacity: 0.95;
+    font-size: 1rem;
+    opacity: 0.8;
+    max-width: 720px;
+    margin: 0 auto;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1240px;
     margin: 0 auto;
-    padding: 0 1rem 3rem;
+    padding: 0 1rem 4rem;
 }
 
 .grid-layout {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
 }
 
 .card {
-    background: var(--surface);
-    border-radius: 18px;
+    position: relative;
+    background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.08));
+    border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    border: 1px solid rgba(31, 77, 61, 0.08);
+    box-shadow: var(--shadow);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    border: 1px solid var(--border);
     cursor: pointer;
 }
 
@@ -87,13 +110,14 @@ body.modal-open {
 }
 
 .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+    transform: translateY(-10px);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+    border-color: rgba(255, 140, 66, 0.28);
 }
 
 .card img {
     width: 100%;
-    height: 230px;
+    height: 240px;
     object-fit: cover;
     display: block;
     transition: transform 0.35s ease;
@@ -104,19 +128,44 @@ body.modal-open {
 }
 
 .card-content {
-    padding: 1.3rem 1.25rem 1.5rem;
+    padding: 1.25rem 1.25rem 1.5rem;
 }
 
 .card-content h2 {
     font-size: 1.35rem;
     color: var(--primary);
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.75rem;
 }
 
 .card-content p {
     font-size: 0.95rem;
     color: var(--muted);
     text-align: justify;
+    min-height: 7rem;
+}
+
+.card::before {
+    content: attr(data-preview);
+    position: absolute;
+    left: 1.3rem;
+    right: 1.3rem;
+    bottom: 1.6rem;
+    padding: 0.8rem 1rem;
+    background: rgba(4, 10, 18, 0.9);
+    color: #d8e4ff;
+    border-radius: 14px;
+    font-size: 0.95rem;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover::before,
+.card:focus-within::before,
+.card:focus-visible::before {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .image-modal {
@@ -126,8 +175,8 @@ body.modal-open {
     align-items: center;
     justify-content: center;
     padding: 1.2rem;
-    background: rgba(6, 16, 12, 0.76);
-    backdrop-filter: blur(10px);
+    background: rgba(3, 6, 12, 0.88);
+    backdrop-filter: blur(14px);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.35s ease;
@@ -147,20 +196,33 @@ body.modal-open {
 
 .modal-frame {
     position: relative;
-    width: min(92vw, 960px);
+    width: min(94vw, 980px);
     aspect-ratio: 16 / 10;
-    border-radius: 24px;
+    border-radius: 28px;
     overflow: hidden;
-    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
-    transform: scale(0.92);
-    transition: transform 0.35s ease;
+    box-shadow: 0 28px 90px rgba(0, 0, 0, 0.4);
+    transform: scale(0.9);
+    transition: transform 0.35s ease, filter 0.35s ease, box-shadow 0.35s ease;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(6, 11, 20, 0.96);
 }
 
 .image-modal.active .modal-frame {
     transform: scale(1);
 }
 
-.modal-frame img {
+.modal-frame.focused {
+    box-shadow: 0 40px 120px rgba(255, 140, 66, 0.28);
+}
+
+.modal-card {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    width: 100%;
+    min-height: 100%;
+}
+
+.modal-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -168,19 +230,47 @@ body.modal-open {
     animation: imageZoom 0.45s ease;
 }
 
+.modal-copy {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(180deg, rgba(6, 12, 22, 0.95), rgba(6, 12, 22, 0.9));
+}
+
+.modal-copy h2 {
+    margin-bottom: 1rem;
+    color: var(--primary);
+    font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+}
+
+.modal-copy p {
+    color: var(--text);
+    opacity: 0.9;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
 .modal-close {
     position: absolute;
-    top: 12px;
-    right: 12px;
-    width: 42px;
-    height: 42px;
+    top: 16px;
+    right: 16px;
+    width: 46px;
+    height: 46px;
     border: none;
     border-radius: 50%;
-    background: rgba(255,255,255,0.9);
-    color: #1f4d3d;
+    background: rgba(255,255,255,0.12);
+    color: #f7f9ff;
     font-size: 1.5rem;
     cursor: pointer;
-    z-index: 2;
+    z-index: 5;
+    backdrop-filter: blur(6px);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.modal-close:hover {
+    transform: scale(1.05);
+    background: rgba(255,255,255,0.18);
 }
 
 @keyframes imageZoom {
@@ -194,12 +284,32 @@ body.modal-open {
     }
 }
 
+.hidden-card {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+    filter: blur(2px);
+    transition: opacity 0.65s ease, transform 0.65s ease, filter 0.65s ease;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+}
+
 footer {
     text-align: center;
     padding: 1.5rem 1rem 2rem;
-    background: var(--primary);
-    color: white;
-    margin-top: 1rem;
+    background: rgba(9, 14, 23, 0.95);
+    color: var(--muted);
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+footer p {
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: 0.95rem;
 }
 
 @media (max-width: 640px) {

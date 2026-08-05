@@ -21,7 +21,7 @@
         <div class="grid-layout">
             
             <!-- Kartu 1 -->
-            <article class="card">
+            <article class="card" data-preview="Pertahanan militer panjang">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/The_Great_Wall_of_China_at_Jinshanling.jpg" alt="Tembok Besar Tiongkok">
                 <div class="card-content">
                     <h2>Tembok Besar Tiongkok</h2>
@@ -30,8 +30,8 @@
             </article>
 
             <!-- Kartu 2 -->
-            <article class="card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Petra_Jordan_2014_1.jpg" alt="Petra Yordania">
+            <article class="card" data-preview="Keajaiban batu merah muda">
+                <img src="image/WhatsApp Image 2026-08-05 at 15.00.04.jpeg" alt="Petra Yordania">
                 <div class="card-content">
                     <h2>Petra</h2>
                     <p>Kota kuno Petra terletak di wilayah pegunungan selatan Yordania, tersembunyi di balik ngarai sempit yang disebut Siq. Dibangun oleh peradaban Nabath sekitar abad ke-4 Sebelum Masehi, kota ini dulunya adalah pusat perdagangan yang sangat makmur sebelum akhirnya ditinggalkan dan dilupakan oleh dunia barat hingga ditemukan kembali pada tahun 1812. Petra masuk dalam daftar keajaiban dunia karena keunikan arsitekturnya yang dipahat langsung ke tebing batu pasir berwarna merah muda. Selain itu, sistem pengelolaan air mereka yang sangat canggih di tengah padang pasir menjadikannya mahakarya teknik yang tak tertandingi di zamannya.</p>
@@ -39,7 +39,7 @@
             </article>
 
             <!-- Kartu 3 -->
-            <article class="card">
+            <article class="card" data-preview="Amfiteater warisan Romawi">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Colosseum_in_Rome%2C_Italy_-_April_2007.jpg" alt="Colosseum Roma">
                 <div class="card-content">
                     <h2>Colosseum</h2>
@@ -48,8 +48,8 @@
             </article>
 
             <!-- Kartu 4 -->
-            <article class="card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/Chichen-Itza-Castillo-Seen-from-Temple-of-the-%20Warriors.jpg" alt="Chichen Itza Meksiko">
+            <article class="card" data-preview="Astronomi dan matematik Maya">
+                <img src="imageweb1.jpg" alt="Chichen Itza Meksiko">
                 <div class="card-content">
                     <h2>Chichen Itza</h2>
                     <p>Terletak di Semenanjung Yucatan, Meksiko, Chichen Itza adalah sebuah kota kuno peninggalan peradaban Suku Maya. Pusat politik dan ekonomi ini diperkirakan dibangun antara abad ke-9 hingga ke-12 Masehi. Bangunan paling ikonik di situs ini adalah Piramida Kukulcan yang sangat presisi. Tempat ini dianggap sebagai keajaiban dunia karena mencerminkan pengetahuan tingkat tinggi peradaban Maya dalam bidang matematika dan astronomi. Desain piramidanya dirancang sedemikian rupa sehingga pada saat titik balik matahari, bayangan yang jatuh di tangga menciptakan ilusi ular yang merayap turun, membuktikan kejeniusan perancangan tata letak kota mereka.</p>
@@ -57,7 +57,7 @@
             </article>
 
             <!-- Kartu 5 -->
-            <article class="card">
+            <article class="card" data-preview="Reruntuhan puncak Andes">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/1/13/Machu_Picchu_%28cropped%29.jpg" alt="Machu Picchu Peru">
                 <div class="card-content">
                     <h2>Machu Picchu</h2>
@@ -66,7 +66,7 @@
             </article>
 
             <!-- Kartu 6 -->
-            <article class="card">
+            <article class="card" data-preview="Monumen cinta abadi">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Taj_Mahal%2C_Agra%2C_India.jpg" alt="Taj Mahal India">
                 <div class="card-content">
                     <h2>Taj Mahal</h2>
@@ -75,7 +75,7 @@
             </article>
 
             <!-- Kartu 7 -->
-            <article class="card">
+            <article class="card" data-preview="Ikon perdamaian Art Deco">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Christ_the_Redeemer_Statue_-_Rio_de_Janeiro%2C_Brazil.jpg" alt="Patung Kristus Penebus Brasil">
                 <div class="card-content">
                     <h2>Patung Kristus Penebus</h2>
@@ -90,7 +90,13 @@
         <div class="modal-backdrop"></div>
         <div class="modal-frame">
             <button class="modal-close" aria-label="Tutup gambar">×</button>
-            <img id="modalImage" src="" alt="Gambar keajaiban dunia">
+            <div class="modal-card">
+                <img id="modalImage" src="" alt="Gambar keajaiban dunia">
+                <div class="modal-copy">
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDescription"></p>
+                </div>
+            </div>
         </div>
     </div>
 
