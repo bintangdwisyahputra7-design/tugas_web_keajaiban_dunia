@@ -9,7 +9,48 @@
 </head>
 <body>
 
-    <header class="hero">
+    <button class="sidebar-toggle" type="button" aria-controls="profileSidebar" aria-expanded="false">
+        <span aria-hidden="true">☰</span>
+        <span>Profil</span>
+    </button>
+
+    <div class="page-shell">
+        <aside class="profile-sidebar" id="profileSidebar">
+            <div class="profile-brand">
+                <span class="brand-mark">07</span>
+                <span>Wonders Atlas</span>
+            </div>
+
+            <section class="profile-card" aria-labelledby="profile-name">
+                <div class="profile-avatar">T</div>
+                <p class="profile-kicker">Penjelajah budaya</p>
+                <h2 id="profile-name">Tangwitra</h2>
+                <p class="profile-bio">Mencatat jejak arsitektur dan cerita dari tempat-tempat paling ikonik di dunia.</p>
+                <button class="profile-action" type="button">Lihat profil <span aria-hidden="true">↗</span></button>
+            </section>
+
+            <div class="profile-stats" aria-label="Statistik profil">
+                <div><strong>07</strong><span>Keajaiban</span></div>
+                <div><strong>06</strong><span>Benua</span></div>
+                <div><strong>12</strong><span>Catatan</span></div>
+            </div>
+
+            <nav class="sidebar-nav" aria-label="Navigasi utama">
+                <p class="sidebar-label">Jelajahi</p>
+                <a class="sidebar-link active" href="#beranda"><span>⌂</span> Beranda</a>
+                <a class="sidebar-link" href="#koleksi"><span>◇</span> Koleksi saya</a>
+                <a class="sidebar-link" href="#catatan"><span>✦</span> Catatan perjalanan</a>
+            </nav>
+
+            <div class="sidebar-note">
+                <span class="note-icon">✎</span>
+                <div><strong>Catatan hari ini</strong><p>“Setiap batu menyimpan cerita.”</p></div>
+            </div>
+        </aside>
+
+        <div class="content-shell">
+
+    <header class="hero" id="beranda">
         <div class="hero-content">
             <p class="eyebrow">Eksplorasi 7 Keajaiban Dunia Baru</p>
             <h1>Jejak Peradaban yang Masih Menginspirasi</h1>
@@ -17,7 +58,11 @@
         </div>
     </header>
 
-    <main class="container">
+    <main class="container" id="koleksi">
+        <div class="section-heading">
+            <div><p class="section-kicker">Koleksi pilihan</p><h2>Tujuh keajaiban</h2></div>
+            <span class="collection-count">01 — 07</span>
+        </div>
         <div class="grid-layout">
             
             <!-- Kartu 1 -->
@@ -25,7 +70,7 @@
                 <img src="image/Unique travel spots.jfif" alt="Tembok Besar Tiongkok">
                 <div class="card-content">
                     <h2>Tembok Besar Tiongkok</h2>
-                    <p>Tembok Besar Tiongkok membentang ribuan kilometer melintasi perbatasan utara Tiongkok. Sejarah pembangunannya dimulai sejak abad ke-7 Sebelum Masehi pada masa berbagai dinasti untuk melindungi kekaisaran dari serangan bangsa nomaden. Pembangunan paling terkenal dan masif terjadi pada masa Dinasti Ming. Bangunan ini ditetapkan sebagai salah satu keajaiban dunia karena merupakan struktur arsitektur militer kuno terpanjang dan terbesar yang pernah dibuat oleh peradaban manusia, menunjukkan tingkat ketekunan, rekayasa teknik, dan organisasi tenaga kerja yang sangat luar biasa di masa lalu.</p>
+                    <p>Membentang ribuan kilometer di perbatasan utara, Tembok Besar Tiongkok adalah struktur pertahanan militer kuno terpanjang di dunia. Dibangun secara bertahap sejak abad ke-7 SM hingga puncaknya pada masa Dinasti Ming, mahakarya ini berdiri sebagai simbol ketekunan dan rekayasa teknik luar biasa dalam melindungi kekaisaran dari serangan bangsa nomaden.</p>
                 </div>
             </article>
 
@@ -34,7 +79,7 @@
                 <img src="image/WhatsApp Image 2026-08-05 at 15.00.04.jpeg" alt="Petra Yordania">
                 <div class="card-content">
                     <h2>Petra</h2>
-                    <p>Kota kuno Petra terletak di wilayah pegunungan selatan Yordania, tersembunyi di balik ngarai sempit yang disebut Siq. Dibangun oleh peradaban Nabath sekitar abad ke-4 Sebelum Masehi, kota ini dulunya adalah pusat perdagangan yang sangat makmur sebelum akhirnya ditinggalkan dan dilupakan oleh dunia barat hingga ditemukan kembali pada tahun 1812. Petra masuk dalam daftar keajaiban dunia karena keunikan arsitekturnya yang dipahat langsung ke tebing batu pasir berwarna merah muda. Selain itu, sistem pengelolaan air mereka yang sangat canggih di tengah padang pasir menjadikannya mahakarya teknik yang tak tertandingi di zamannya.</p>
+                    <p>Tersembunyi di balik ngarai sempit di selatan Yordania, Petra adalah kota kuno peninggalan peradaban Nabath dari abad ke-4 SM. Kota perdagangan yang makmur ini sangat terkenal karena keunikan arsitekturnya yang dipahat langsung ke dalam tebing batu pasir merah muda, serta sistem pengelolaan airnya yang sangat canggih di tengah padang pasir..</p>
                 </div>
             </article>
 
@@ -43,7 +88,7 @@
                 <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Colosseum_in_Rome%2C_Italy_-_April_2007.jpg" alt="Colosseum Roma">
                 <div class="card-content">
                     <h2>Colosseum</h2>
-                    <p>Colosseum adalah sebuah amfiteater raksasa yang berada di pusat kota Roma, Italia. Dibangun pada masa Kekaisaran Romawi di bawah pemerintahan Kaisar Vespasianus pada tahun 72 Masehi dan diselesaikan oleh putranya, Titus. Bangunan bersejarah ini digunakan sebagai arena pertunjukan gladiator, perburuan hewan, dan eksekusi publik yang bisa menampung hingga puluhan ribu penonton. Tempat ini diakui sebagai keajaiban dunia karena merupakan pencapaian luar biasa dalam bidang arsitektur dan teknik Romawi kuno, serta menjadi simbol abadi dari kekuatan, budaya, dan kemegahan Kekaisaran Romawi yang sangat berpengaruh dalam sejarah dunia.</p>
+                    <p>Terletak di pusat kota Roma, Italia, Colosseum adalah amfiteater raksasa yang dibangun pada masa Kekaisaran Romawi sekitar tahun 72 Masehi. Bangunan megah yang dulunya menjadi arena pertunjukan gladiator untuk puluhan ribu penonton ini merupakan simbol abadi dari kekuatan, budaya, dan pencapaian luar biasa bidang arsitektur Romawi kuno.</p>
                 </div>
             </article>
 
@@ -52,7 +97,7 @@
                 <img src="image/Best Places to Visit in Mexico on a Budget.jfif" alt="Chichen Itza Meksiko">
                 <div class="card-content">
                     <h2>Chichen Itza</h2>
-                    <p>Terletak di Semenanjung Yucatan, Meksiko, Chichen Itza adalah sebuah kota kuno peninggalan peradaban Suku Maya. Pusat politik dan ekonomi ini diperkirakan dibangun antara abad ke-9 hingga ke-12 Masehi. Bangunan paling ikonik di situs ini adalah Piramida Kukulcan yang sangat presisi. Tempat ini dianggap sebagai keajaiban dunia karena mencerminkan pengetahuan tingkat tinggi peradaban Maya dalam bidang matematika dan astronomi. Desain piramidanya dirancang sedemikian rupa sehingga pada saat titik balik matahari, bayangan yang jatuh di tangga menciptakan ilusi ular yang merayap turun, membuktikan kejeniusan perancangan tata letak kota mereka.</p>
+                    <p>Berada di Semenanjung Yucatan, Meksiko, Chichen Itza adalah pusat kota kuno peninggalan peradaban Suku Maya. Bangunan paling ikoniknya, Piramida Kukulcan, memadukan pengetahuan matematika dan astronomi yang sangat presisi, di mana bayangan matahari saat titik balik menciptakan ilusi bayangan ular yang merayap turun di sepanjang tangga.</p>
                 </div>
             </article>
 
@@ -61,7 +106,7 @@
                 <img src="image/Machu Picchu.jfif" alt="Machu Picchu Peru">
                 <div class="card-content">
                     <h2>Machu Picchu</h2>
-                    <p>Machu Picchu adalah sebuah situs reruntuhan Inka yang berada tinggi di Pegunungan Andes, Peru. Situs yang dijuluki Kota Inka yang Hilang ini dibangun pada abad ke-15 pada masa pemerintahan Kaisar Pachacuti, namun kemudian ditinggalkan saat penaklukan Spanyol dan baru ditemukan kembali secara luas oleh Hiram Bingham pada tahun 1911. Mahakarya ini dinobatkan sebagai keajaiban dunia karena lokasinya yang sangat dramatis dan teknik pembangunan tembok batu tanpa menggunakan semen yang sangat presisi. Kemampuan bangsa Inka membangun kota lengkap dengan terasering pertanian dan sistem drainase di atas lereng gunung yang curam masih menjadi kekaguman para ahli hingga saat ini.</p>
+                    <p>Terletak tinggi di Pegunungan Andes, Peru, Machu Picchu adalah situs mahakarya peninggalan Inka yang dibangun pada abad ke-15. Situs dramatis ini memukau dunia melalui teknik pembangunan tembok batunya yang sangat presisi tanpa menggunakan semen, lengkap dengan sistem terasering pertanian canggih di atas lereng gunung yang curam.</p>
                 </div>
             </article>
 
@@ -70,7 +115,7 @@
                 <img src="image/The Timeless Taj Mahal.jfif" alt="Taj Mahal India">
                 <div class="card-content">
                     <h2>Taj Mahal</h2>
-                    <p>Taj Mahal berdiri megah di tepi Sungai Yamuna, kota Agra, India. Bangunan marmer putih ini dibangun pada abad ke-17 atas perintah Kaisar Mughal Shah Jahan sebagai makam dan monumen cinta abadi untuk istri tercintanya, Mumtaz Mahal. Pembangunannya melibatkan puluhan ribu pekerja dan pengrajin dari seluruh dunia Islam. Bangunan ini masuk ke dalam daftar keajaiban dunia karena merupakan contoh puncak dari arsitektur Mughal, yang menggabungkan elemen gaya Islam, Persia, Ottoman, dan India. Simetri bangunannya yang sempurna serta detail ukiran dan tatahan batu mulianya menjadikannya salah satu karya seni paling indah yang pernah diciptakan.</p>
+                    <p>Berdiri megah di tepi Sungai Yamuna, India, Taj Mahal adalah mahakarya puncak dari arsitektur Mughal yang dibangun pada abad ke-17. Monumen marmer putih ini didirikan oleh Kaisar Shah Jahan sebagai lambang cinta abadi untuk istri tercintanya, menampilkan tingkat simetri bangunan yang sempurna dan detail ukiran yang sangat indah.</p>
                 </div>
             </article>
 
@@ -79,7 +124,7 @@
                 <img src="image/WhatsApp Image 2026-08-05 at 15.00.25.jpeg" alt="Patung Kristus Penebus Brasil">
                 <div class="card-content">
                     <h2>Patung Kristus Penebus</h2>
-                    <p>Patung Kristus Penebus menjulang di atas puncak Gunung Corcovado menghadap ke kota Rio de Janeiro, Brasil. Selesai dibangun pada tahun 1931, patung setinggi 30 meter dengan rentangan tangan 28 meter ini bergaya Art Deco. Gagasan pembangunannya muncul dari komunitas Katolik Brasil sebagai simbol kedamaian dan kehadiran agama yang kuat. Patung ini ditetapkan sebagai keajaiban dunia baru karena tidak hanya menjadi ikon budaya yang diakui secara global bagi Brasil, tetapi juga merupakan prestasi rekayasa teknik yang mengagumkan, mengingat material beton bertulang dan batu sabun harus diangkut dan dirakit di atas puncak gunung yang terjal.</p>
+                    <p>Menjulang setinggi 30 meter di puncak Gunung Corcovado, Patung Kristus Penebus menghadap langsung ke arah kota Rio de Janeiro, Brasil. Selesai dibangun pada tahun 1931 dengan gaya Art Deco, patung beton ini menjadi simbol kedamaian dunia sekaligus ikon budaya Brasil yang diakui secara global berkat rekayasa tekniknya yang mengagumkan.</p>
                 </div>
             </article>
 
@@ -103,6 +148,9 @@
     <footer>
         <p>&copy; 2026 Tugas Akhir Semester - Dibuat oleh Tangwitra</p>
     </footer>
+
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

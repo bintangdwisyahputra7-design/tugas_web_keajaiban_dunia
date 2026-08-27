@@ -5,6 +5,21 @@ const modalDescription = document.getElementById('modalDescription');
 const closeButton = document.querySelector('.modal-close');
 const cards = document.querySelectorAll('.card');
 const modalFrame = document.querySelector('.modal-frame');
+const sidebarToggle = document.querySelector('.sidebar-toggle');
+const sidebarLinks = document.querySelectorAll('.sidebar-link');
+
+function toggleSidebar() {
+    const isOpen = document.body.classList.toggle('sidebar-open');
+    sidebarToggle?.setAttribute('aria-expanded', String(isOpen));
+}
+
+sidebarToggle?.addEventListener('click', toggleSidebar);
+sidebarLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+        document.body.classList.remove('sidebar-open');
+        sidebarToggle?.setAttribute('aria-expanded', 'false');
+    });
+});
 
 function openModal(card) {
     if (!modal || !modalImage || !card) return;
