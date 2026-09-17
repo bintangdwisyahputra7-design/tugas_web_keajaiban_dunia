@@ -372,11 +372,11 @@ body.modal-open {
     background: radial-gradient(circle at center, rgba(255,255,255,0.16), transparent 70%);
 }
 
-/* 1. Kunci ukuran luar modal agar tidak terpengaruh ukuran gambar */
+
 .modal-frame {
     position: relative;
     width: min(94vw, 980px);
-    height: 600px; /* Tambahkan tinggi absolut agar layout tidak melar */
+    height: 600px;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 28px 90px rgba(0, 0, 0, 0.4);
@@ -390,34 +390,34 @@ body.modal-open {
     transform: scale(1);
 }
 
-/* 2. Paksa pembagian layar persis 50:50 */
+
 .modal-card {
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
     height: 100%;
-    overflow: hidden; /* Mencegah gambar tumpah ke luar kotak */
+    overflow: hidden;
 }
 
-/* 3. Kunci gambar agar terpotong rapi (cover) tanpa merusak grid */
+
 .modal-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
     display: block;
-    min-height: 0; /* KUNCI PENTING: Memaksa gambar patuh pada tinggi kotak */
+    min-height: 0; 
     animation: imageZoom 0.45s ease;
 }
 
-/* 4. Tarik teks persis ke tengah secara vertikal dan rata kiri horizontal */
+
 .modal-copy {
     height: 100%;
     padding: 3rem;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Menarik teks ke tengah (Atas-Bawah) */
-    align-items: flex-start; /* Menarik teks ke kiri (Kiri-Kanan) */
+    justify-content: center; 
+    align-items: flex-start; 
     background: #17232a;
     min-width: 0;
     overflow-y: auto;
@@ -429,7 +429,7 @@ body.modal-open {
     color: var(--primary);
     font-size: 2rem;
     line-height: 1.3;
-    text-align: left; /* Teks judul rata kiri */
+    text-align: left; 
     width: 100%;
 }
 
@@ -437,7 +437,7 @@ body.modal-open {
     color: var(--muted);
     font-size: 1rem;
     line-height: 1.8;
-    text-align: left; /* Teks paragraf rata kiri */
+    text-align: left; 
     margin: 0;
     width: 100%;
 }
